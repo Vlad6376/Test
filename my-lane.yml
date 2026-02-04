@@ -1,0 +1,16 @@
+name: "My Imported Lane"
+description: "A lane imported from a Git repository for testing."
+config:
+    delegated_authority_enabled: true
+    revocability_enabled: true
+    human_oversight_enabled: true
+    joint_custody_enabled: false
+    m_of_n_quorum_enabled: false
+    max_delegated_authorities: 5
+    max_oversight_members: 3
+    default_quorum_size: 1
+    delegation_timeout_seconds: 3600
+    ethical_guardrails_enabled: true
+directives:
+  - "TRUTH"
+  - "HOPE"
