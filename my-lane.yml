@@ -1,23 +1,17 @@
-- name: "Staging Environment Lane"
-  description: "A lane for testing new functionality before rolling out to production. It uses a subset of production directives for validation."
+# ===================================================================
+# YAML File for Validation Testing
+#
+# This file contains a mix of valid and invalid Lane definitions
+# to test the comprehensive validation logic of the import service.
+# ===================================================================
+
+- name: "Valid Analytics Lane"
+  description: "A perfectly valid lane for data analysis."
   config:
     delegated_authority_enabled: true
     revocability_enabled: true
     human_oversight_enabled: true
-    max_delegated_authorities: 3
-    max_oversight_members: 3
-    delegation_timeout_seconds: 3600
-    ethical_guardrails_enabled: true
-  directives:
-    - "TRUTH"
-    - "GATE"
-
-- name: "Data Analytics Lane"
-  description: "A specialized lane for running data analysis agents. This lane focuses on data privacy and integrity."
-  config:
-    delegated_authority_enabled: false
-    revocability_enabled: true
-    human_oversight_enabled: true
+    max_delegated_authorities: 2
     max_oversight_members: 2
     delegation_timeout_seconds: 86400
     ethical_guardrails_enabled: true
@@ -25,20 +19,19 @@
     - "FAIR"
     - "GDPR"
 
-- name: "High-Security Operations Lane"
-  description: "For critical operations that require maximum security, accountability, and human control with a quorum."
+- name: "" # <-- ERROR: Name is empty
+  description: "This lane has an invalid empty name."
   config:
     delegated_authority_enabled: true
     revocability_enabled: true
-    human_oversight_enabled: true
-    joint_custody_enabled: true
-    m_of_n_quorum_enabled: true
-    max_delegated_authorities: 10
-    max_oversight_members: 5
-    default_quorum_size: 3
-    delegation_timeout_seconds: 7200
-    ethical_guardrails_enabled: true
+    human_oversight_enabled: false
+  directives:
+    - "TRUTH"
+
+- name: "Lane with No Description"
+  description: "" # <-- ERROR: Description is empty
+  config:
+    delegated_authority_enabled: false
   directives:
     - "HOPE"
-    - "CARE"
-    - "TRUTH"
+
