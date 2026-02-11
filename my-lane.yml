@@ -5,7 +5,7 @@
 # to test the comprehensive validation logic of the import service.
 # ===================================================================
 
-- name: "12344Valid Analytics Lane12443"
+- name: "12344Valid Analytics Lane124431"
   description: "A perfectly valid lane for data analysis."
   config:
     delegated_authority_enabled: true
